@@ -1,0 +1,127 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load static %}
+<br>
+<div class="container-fluid" style="width: auto">
+ <img src="{% static 'images/head.png' %}" alt="" style="height: 150px; width: 100%;">
+</div>
+
+ <div class="latest">
+  <div class="item; current"><a style="color: greenyellow;" href="{% url 'blog:home' %}"><strong>Latest</strong></a></div>
+  <div class="item"><a style="color: black;" href="{% url 'blog:epl' %}"><strong>EPL</strong></div></a>
+  <div class="item"><a style="color: black;" href="{% url 'blog:laliga' %}"><strong>Laliga</strong></a></div>
+  <div class="item"><a style="color: black;" href="{% url 'blog:seriaA' %}"><strong>Seria A</strong></a></div>
+  <div class="item"><a style="color: black;" href="{% url 'blog:bundesliga' %}"><strong>bundesliga</strong></a></div>
+  <div class="item"><a style="color: black;" href="{% url 'blog:league1' %}"><strong>league1</strong></a></div>
+  <div class="item"><a style="color: black;" href="#"><strong>Others</strong></a></div>
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+      <!--<div class="col-lg-4" style="padding-bottom: 15px;" >
+        <img src="head.jpg" alt=" demo" style="width: 100%; height: 100px;">
+        <div class="post-box ">
+         
+        </div>
+      </div> -->
+      {% for post in post_list %}
+      <div class="col-lg-4"  style="padding-bottom: 15px;" >
+        <img src="{{post.display_image.url}}" alt=" display image" class="img-responsive" style="width: 100%; height: 200px;">
+        <div class="post-box " style="padding-inline: 4px;">
+          <h4><strong style="font-style: oblique; font-size: medium;">{{post.title}}</strong></h4>
+          <hr>
+          <div class="container">
+          <p style=" font-size: small; float: left;;"> {{ post.created_on}} {{ post.author }}</p>
+          <p style="font-size: small; float: right;"><i class="fas fa-eye">{{ post.counts }}</i> <i class="fas fa-comment"> 5 </i></p>
+          </div>
+          <br>  
+          <div style="margin-left: 80%;" ><a class="btn btn-dark" href = {% url 'blog:post_detail' post.slug %} style="border-radius: 1px;"><strong> more</strong></a></div>
+           <!--<table class="table">
+            <tr>
+              <th>kfp4fkkfp</th>
+              <th>ehvuoh</th>
+              <th>eurejci</th>
+            </tr>
+          </table>
+          <div class="box-row">
+            <div style="flex: 3;"> mad </div>
+            <div style="flex: 2;"> hey balls</div>
+            <div style="flex: 1;"> hey man</div>
+            <div style="flex: 1;"> whats good</div>
+          </div> -->
+        </div>
+      </div>
+      {% endfor %}
+      {% if is_paginated %}
+          <nav aria-label="Page navigation conatiner"></nav>
+          <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+          </ul>
+          </nav>
+        </div>
+        {% endif %}
+      <!-- <div class="col-lg-4"  style="padding-bottom: 15px;">
+        <img src="head.jpg" alt=" demo" style="width: 100%; height: 100px;">
+        <div class="post-box ">
+        </div> -->
+      </div>
+    </div>
+
+      <!--<div class="col-lg-4" style="padding-bottom: 15px;" >
+        <img src="head.jpg" alt=" demo" style="width: 100%; height: 100px;">
+        <div class="post-box ">
+         
+        </div>
+      </div> -->
+      
+           <!--<table class="table">
+            <tr>
+              <th>kfp4fkkfp</th>
+              <th>ehvuoh</th>
+              <th>eurejci</th>
+            </tr>
+          </table>
+          <div class="box-row">
+            <div style="flex: 3;"> mad </div>
+            <div style="flex: 2;"> hey balls</div>
+            <div style="flex: 1;"> hey man</div>
+            <div style="flex: 1;"> whats good</div>
+          </div> -->
+        
+     
+      <img src="{% static 'images/pitch2.jpg' %}" alt="medium" width="100%" height="180px">
+      <br><br>
+      <div class="container-fluid" id="milk" style="margin-top: 25px;">
+        <div class="row">
+          <div class=" col-lg-6">
+            <div align='center' class="about">
+              <p style="font-style: oblique; font-family: Dutch801 XBd BT; font-size: large; font-weight: bolder; text-align: center;">About</p>
+              <div style="width:50% ; height:1px; position:relative; top: -6px; background-color: rgb(250, 250, 250);" ></div>
+              <p>Welcome to speaking sports.<br> Here we give you confirmed updates on football, facts, rumours and intresting this in the world of football, Histories that you don't
+              believed that happend trending updates. football rallies, football speculations and expectations.
+              All we do is bring the glory of football to you.   </p> 
+           </div>
+          </div>
+          <br>
+          <div class="col-lg-6">
+            <div align='center' class="about">
+              <p style="font-style: oblique; font-family: Dutch801 XBd BT; font-size: large; font-weight: bolder; text-align: center;">How to submit a post</p>
+              <div style="width:50% ; height:1px; position:relative; top: -6px; background-color: rgb(250, 250, 250);" ></div>
+              <p> this is website is home to all football fans.
+                  how to get your post to us, which should be authentic and most not contain any hate towards anyone or place
+                  just click the contribute button below
+              </p> 
+              <a class="btn btn-white" href="#" style="margin-bottom: 10px;">contribute</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="height: 2px; width:100%; background-color: indigo; margin-top: 40px;"></div>
+    
+{% endblock %}
