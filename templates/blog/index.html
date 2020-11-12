@@ -18,12 +18,6 @@
 <hr>
 <div class="container-fluid">
     <div class="row">
-      <!--<div class="col-lg-4" style="padding-bottom: 15px;" >
-        <img src="head.jpg" alt=" demo" style="width: 100%; height: 100px;">
-        <div class="post-box ">
-         
-        </div>
-      </div> -->
       {% for post in post_list %}
       <div class="col-lg-4"  style="padding-bottom: 15px;" >
         <img src="{{post.display_image.url}}" alt=" display image" class="img-responsive" style="width: 100%; height: 200px;">
@@ -36,19 +30,6 @@
           </div>
           <br>  
           <div style="margin-left: 80%;" ><a class="btn btn-dark" href = {% url 'blog:post_detail' post.slug %} style="border-radius: 1px;"><strong> more</strong></a></div>
-           <!--<table class="table">
-            <tr>
-              <th>kfp4fkkfp</th>
-              <th>ehvuoh</th>
-              <th>eurejci</th>
-            </tr>
-          </table>
-          <div class="box-row">
-            <div style="flex: 3;"> mad </div>
-            <div style="flex: 2;"> hey balls</div>
-            <div style="flex: 1;"> hey man</div>
-            <div style="flex: 1;"> whats good</div>
-          </div> -->
         </div>
       </div>
       {% endfor %}
@@ -66,35 +47,10 @@
           </nav>
         </div>
         {% endif %}
-      <!-- <div class="col-lg-4"  style="padding-bottom: 15px;">
-        <img src="head.jpg" alt=" demo" style="width: 100%; height: 100px;">
-        <div class="post-box ">
-        </div> -->
+      
       </div>
     </div>
-
-      <!--<div class="col-lg-4" style="padding-bottom: 15px;" >
-        <img src="head.jpg" alt=" demo" style="width: 100%; height: 100px;">
-        <div class="post-box ">
-         
-        </div>
-      </div> -->
       
-           <!--<table class="table">
-            <tr>
-              <th>kfp4fkkfp</th>
-              <th>ehvuoh</th>
-              <th>eurejci</th>
-            </tr>
-          </table>
-          <div class="box-row">
-            <div style="flex: 3;"> mad </div>
-            <div style="flex: 2;"> hey balls</div>
-            <div style="flex: 1;"> hey man</div>
-            <div style="flex: 1;"> whats good</div>
-          </div> -->
-        
-     
       <img src="{% static 'images/pitch2.jpg' %}" alt="medium" width="100%" height="180px">
       <br><br>
       <div class="container-fluid" id="milk" style="margin-top: 25px;">
