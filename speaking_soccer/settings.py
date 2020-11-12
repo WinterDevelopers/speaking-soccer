@@ -28,9 +28,9 @@ MEDIA_ROOT = BASE_DIR/'media'
 SECRET_KEY = '3p)^ki0b9g1fh^(xe1r5766m#ft$20qofsq#g@ls-n6@js22-2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.speaking-soccer.herokuapp.com']
 
 
 # Application definition
