@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'django_summernote',
     'django.contrib.sitemaps',
     'crispy_forms',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     
 ]
  
-SITE_ID = 1
+#SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
