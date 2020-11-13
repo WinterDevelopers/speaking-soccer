@@ -16,7 +16,7 @@ urlpatterns = [
     path('League-1', League1Post.as_view(), name = 'league1'),
     path('Bundesliga', BundesligaPost.as_view(), name = 'bundesliga'),
     path('<slug:slug>', post_detail, name = 'post_detail'),
-     path('admini/', admin.site.urls),
+     path('admini/', admin.site.urls, name = 'admin'),
    
  
 ]
