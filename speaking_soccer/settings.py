@@ -28,8 +28,7 @@ MEDIA_ROOT = BASE_DIR/'media'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '3p)^ki0b9g1fh^(xe1r5766m#ft$20qofsq#g@ls-n6@js22-2'
 
-import os
-SECRET_KEY = os.environ['SECRET_KEY']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
