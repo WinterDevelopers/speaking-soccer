@@ -1,4 +1,5 @@
 from django.urls import path, include
+from django.contrib import admin
 
 from blog.views import (PostList, post_detail, SeriaAPost,
                         PostDetail, EplPost, League1Post,
@@ -15,6 +16,7 @@ urlpatterns = [
     path('League-1', League1Post.as_view(), name = 'league1'),
     path('Bundesliga', BundesligaPost.as_view(), name = 'bundesliga'),
     path('<slug:slug>', post_detail, name = 'post_detail'),
+     path('admini/', admin.site.urls),
    
  
 ]
