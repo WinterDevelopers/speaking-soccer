@@ -20,7 +20,7 @@
     <div class="row">
       {% for post in post_list %}
       <div class="col-lg-4"  style="padding-bottom: 15px;" >
-        <img src="{{post.display_image.url}}" alt=" display image" class="img-responsive" style="width: 100%; height: 200px;">
+        <img src="{{ post.display_image.url }}" alt=" display image" class="img-responsive" style="width: 100%; height: 200px;">
         <div class="post-box " style="padding-inline: 4px;">
           <h4><strong style="font-style: oblique; font-size: medium;">{{post.title}}</strong></h4>
           <hr>

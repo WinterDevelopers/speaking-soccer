@@ -26,7 +26,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    display_image = models.ImageField(upload_to = 'static/images', default = 'static/images/head.jpg')
+    display_image = models.ImageField(upload_to = 'media/dynamic', default = 'static/images/head.png')
     counts = models.IntegerField(default = 0)
     category = models.IntegerField(choices=TAG, default=0)
 
