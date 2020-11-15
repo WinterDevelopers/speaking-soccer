@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR/'templates'
 STATIC_ROOT = BASE_DIR/'staticfiles'
 STATIC_DIR = BASE_DIR/'static'
-MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_ROOT = BASE_DIR/'static'
 
 
 
@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'django_summernote',
     'django.contrib.sitemaps',
     'crispy_forms',
-    #'django.contrib.sites',
+    'django.contrib.sites',
     
 ]
  
-#SITE_ID = 1
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

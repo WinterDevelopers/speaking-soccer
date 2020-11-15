@@ -26,7 +26,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    display_image = models.ImageField(upload_to = 'images', default = 'static/images/head.jpg')
+    display_image = models.ImageField(upload_to = 'static/images', default = 'static/images/head.jpg')
     counts = models.IntegerField(default = 0)
     category = models.IntegerField(choices=TAG, default=0)
 
@@ -57,6 +57,14 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)
+
+
+class Subscribers(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name
     
 
 

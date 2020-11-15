@@ -4,6 +4,7 @@ from django.urls import reverse
 
 from blog.models import Post, Comment
 from blog.forms import CommentForm
+from blog.subscription import SubscribersForm
 
 
 # Create your views here.
@@ -84,4 +85,10 @@ class DemoForm(generic.FormView):
     form_class = CommentForm
     success_url = '/post_detail/'
 
+
+class SubscriptionView(generic.FormView):
+    template_name = 'subscription.html'
+    form_model = SubscribersForm
+    #success_url = '/post_detail/'
+    context_object_name = 'subscription'
 
