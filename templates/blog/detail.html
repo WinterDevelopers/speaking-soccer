@@ -22,22 +22,20 @@
     </li>
   </ul>
     <div class="row">
-        <div class="col-md-10 card mb-4  mt-3 left  top">
-          <div class="card-body">
+        <div class="col-md-10 mb-4  mt-3 left  top">
+          <div class="detail-box">
             <h1>{{ post.title }}</h1>
             <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
             <div class="post">
             <p class="card-text ">
-            <img src="{{ post.display_image.url }}" alt="" style="width: 100%; height: 250px;">
+            <img src="{{ post.display_image.url }}" alt="" style="width: 80%; height: 250px;" class="detail-img-box">
             <hr>
             {{ post.content | safe }}</p>
-          </div>
-          {{post.counts}} 
-          </div>
+         
         </div>
          
-        <div class="col-md-8 card mb-4  mt-3 ">
-          <div class="card-body">
+        <div class="col-md-8  mb-4  mt-3 ">
+          <div class="detail-box">
            
             <h2>{{ comments.count }} comments</h2>
     
@@ -54,8 +52,8 @@
             {% endfor %}
           </div>
         </div>
-        <div class="col-md-8 card mb-4  mt-3 ">
-          <div class="card-body">
+        <div class="col-md-8 mb-4  mt-3 ">
+          <div class="detail-box">
             {% if new_comment %}
             <div class="alert alert-success" role="alert">
               Your comment is awaiting moderation
