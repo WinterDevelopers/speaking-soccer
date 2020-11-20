@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR/'templates'
 STATIC_ROOT = BASE_DIR/'staticfiles'
 STATIC_DIR = BASE_DIR/'static'
-MEDIA_ROOT = BASE_DIR/'static'
+MEDIA_ROOT = BASE_DIR/'media'
 
 
 
@@ -31,7 +31,7 @@ SECRET_KEY = '3p)^ki0b9g1fh^(xe1r5766m#ft$20qofsq#g@ls-n6@js22-2'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -45,10 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'blog',
     'django_summernote',
     'django.contrib.sitemaps',
     'crispy_forms',
+   
     #'django.contrib.sites',
     
 ]

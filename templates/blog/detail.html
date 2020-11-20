@@ -1,8 +1,26 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% load static %}
+{% load breadcrumbstop %}
 <br>
 <div class="container">
+  <ul class="breadcrumbs">
+    <li class="breadcrumbs--item">
+      <a href="" class="breadcrumbs--link">
+        Home
+      </a>
+    </li>
+    <li class="breadcrumbs--item">
+      <a href="" class="breadcrumbs--link">
+        {{post.category | breadcrumbs}}
+      </a>
+    </li>
+    <li class="breadcrumbs--item ">
+      <a href="" class="breadcrumbs--link breadcrumbs--link--active">
+        {{post.title}}
+      </a>
+    </li>
+  </ul>
     <div class="row">
         <div class="col-md-10 card mb-4  mt-3 left  top">
           <div class="card-body">

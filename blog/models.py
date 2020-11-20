@@ -13,7 +13,7 @@ STATUS = (
 
 # to create categories
 TAG = (
-    (0,'EPL'), (1,'laliga'), (2,'seria-A'), (3,'bundesliga'), (4, 'league 1'),
+    ('EPL',0), (1,'laliga'), (2,'seria-A'), (3,'bundesliga'), (4, 'league 1'),
 )
 
 
@@ -26,9 +26,9 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    display_image = models.ImageField(upload_to = 'media/dynamic', default = 'static/images/head.png')
+    display_image = models.ImageField(upload_to = 'media/dynamic', default = 'images/head.png')
     counts = models.IntegerField(default = 0)
-    category = models.IntegerField(choices=TAG, default=0)
+    category = models.IntegerField(choices=TAG, default='EPL')
 
 
     class Meta:

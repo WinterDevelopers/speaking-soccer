@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html> 
 
 <head>
@@ -40,10 +41,13 @@
         .post-box{
           border-radius: 2px;
           background-color: rgb(255, 255, 255);
-          box-shadow: rgb(7, 7, 7) 1px 2px 8px 1px ;
+          box-shadow: rgb(7, 7, 7) 1px 2px 15px -3px ;
           color: black;
           padding: 10px;
           padding-inline-start: 2px;
+        }
+        .post-box--icon{
+          color: dimgray ;
         }
         .box-row{
           display: flex;
@@ -109,6 +113,31 @@
           margin-bottom: 10px;
           box-shadow: rgb(7, 7, 7) 2px 2px 3px;
           font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .breadcrumbs{
+          padding: 10px;
+          font-family: sans-serif;
+
+        }
+        .breadcrumbs--item{
+          display: inline-block;
+        }
+        .breadcrumbs--item:not(:last-of-type)::after{
+          content: '//';
+          margin: 0px, 5px;
+          color: rgb(220, 221, 221);
+        }
+        .breadcrumbs--link{
+          text-decoration: none;
+          color: #999999;
+        }
+        .breadcrumbs--link:hover{
+          color: greenyellow;
+          text-decoration: underline;
+        }
+        .breadcrumbs--link--active{
+          color: rgb(5, 5, 5);
+          font-weight: 500;
         }
     </style>
 </head>

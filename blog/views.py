@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.views import generic
 from django.urls import reverse
 
@@ -59,6 +59,8 @@ def post_detail(request, slug):
     new_comment = None
     post.counts = post.counts + 1
     post.save()
+  
+
 
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
@@ -78,7 +80,7 @@ def post_detail(request, slug):
                                                 'new_comment': new_comment,
                                                 'comment_form':comment_form })
     
-
+  
 
 class DemoForm(generic.FormView):
     template_name = 'detail.html'
@@ -86,9 +88,18 @@ class DemoForm(generic.FormView):
     success_url = '/post_detail/'
 
 
-class SubscriptionView(generic.FormView):
-    template_name = 'subscription.html'
-    form_model = SubscribersForm
-    #success_url = '/post_detail/'
-    context_object_name = 'subscription'
+def sub_view(request):
+    sub = SubscribersForm()
+
+    if request.method == 'POST':
+        sub = SubscribersForm(request.POST)
+
+        if sub.is_valid():
+            sub.save(commit=True)
+            return HttpResponse('<p><b>welcome</b></p>')
+    
+    else:
+        sub = SubscribersForm
+        
+    return render(request, 'blog/subscription.html', {'sub':sub})
 

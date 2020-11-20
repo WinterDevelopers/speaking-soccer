@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from blog.views import (PostList, post_detail, SeriaAPost,
                         PostDetail, EplPost, League1Post,
-                        BundesligaPost, LaligaPost, SubscriptionView)
+                        BundesligaPost, LaligaPost, sub_view)
 
 
 app_name = 'blog'
@@ -15,8 +15,9 @@ urlpatterns = [
     path('Seria-A', SeriaAPost.as_view(), name = 'seriaA'),
     path('League-1', League1Post.as_view(), name = 'league1'),
     path('Bundesliga', BundesligaPost.as_view(), name = 'bundesliga'),
+    path('sub', sub_view, name = 'subscription'),
     path('<slug:slug>', post_detail, name = 'post_detail'),
-    path('subscribes', SubscriptionView.as_view(), name = 'subscription'),
+    
    
  
 ]

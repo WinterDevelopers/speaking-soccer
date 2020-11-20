@@ -1,13 +1,9 @@
 <div style="border: 1px solid white; border-radius: 2px; padding: 10px; text-align: center;">
     <div><strong>SUBSCRIBE</strong></div>
     <div style="margin-bottom: 10px;">please subscribe to get the most important updates</div>
-    {% for sub in subscription %}
-    <form action="{% url 'blog:subscribe' %}" method="POST" class="form-horizontal">
+    <form action="" method="POST" class="form-horizontal">
         {% csrf_token %}
         {{ sub.as_p }}
-        <input placeholder="Input your email" type="email" name="email subscription" required>
-        <br><hr>
         <input type="submit" name="subscription button" value="Subscribe" class="btn btn-danger btn-sm">
     </form>
-    {% endfor %}
 </div>
