@@ -162,7 +162,12 @@
           padding-inline-start: 10px;
           font-family:fantasy;
           padding-top: 5px;
+          display: block;
+          position: relative;
+         
+
         }
+       
     </style>
 </head>
 <body>
@@ -203,29 +208,39 @@
         </div>
  </body>    
 
-<footer class="footer ">
+<footer class="footer container-fulid">
+  <div>
   <div class="row">
     <div class="col-md-6">
       <h6> Contact </h6>
-      <div style="width: 90%; height:1px; position: relative; top: -10px; background-color:white"></div>
+      <div style="width: 70%; height:1px; position: relative; top: -10px; background-color:white"></div>
       <div style="display: flex;">
-      <img src="{% static 'images/favicon.png' %}" alt="%^&" class="item" style="width: 20px; height: 20px; margin-right:5px ;">
-      <p style="color: lavender;">speakingsoccer@gmail.com</p>
+      <i class="item fas fa-envelope" style="padding-right: 20px;" ></i>
+      <p style="color: lavender; font-size: xx-small;" class="item">speakingsoccer@gmail.com</p>
       </div>
+      <div style="display: flex;">
+        <i class="item fas fa-phone" style="padding-right: 20px;" ></i>
+        <p style="color: lavender; font-size: xx-small;" class="item">080-0000-0000</p>
+        </div>
     </div>
     <div class="col-md-6">
     <h6>Terms and policy</h6>
-    <div style="width: 90%; height:1px; position: relative; top: -10px; background-color: ivory;"></div>
+    <div style="width: 70%; height:1px; position: relative; top: -10px; background-color: ivory;"></div>
     <div style="display: flex;">
-    <img src="{% static 'images/favicon.png' %}" alt="%^&" class="item" style="width: 20px; height: 20px; margin-right:5px ;">
-    <p class="item">Terms of usage and Privacy policy</p>
+      <i class="item fas fa-phone" style="padding-right: 20px;" ></i>
+      <p style="color: lavender; font-size: xx-small;" class="item">Terms and conditions</p>
     </div>
     </div>
   </div>
-
-
+  <div class="d-flex justify-content-center mb-3 ">
+    <div class="p-2 "><i class="fab fa-whatsapp"></i></div>
+    <div class="p-2 "><i class="fab fa-instagram"></i></div>
+    <div class="p-2 "><i class="fab fa-twitter"></i></div>
+    </div>
+  </div>
+</footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</footer>
+
 </html>
