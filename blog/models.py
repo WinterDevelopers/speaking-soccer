@@ -13,7 +13,7 @@ STATUS = (
 
 # to create categories
 TAG = (
-    ('EPL',0), (1,'laliga'), (2,'seria-A'), (3,'bundesliga'), (4, 'league 1'),
+    (0, 'EPL'), (1,'laliga'), (2,'seria-A'), (3,'bundesliga'), (4, 'league 1'),
 )
 
 

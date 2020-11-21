@@ -15,6 +15,12 @@ def breadcrumbs(val):
         return 'EPL'
     elif int_val==1:
         return 'Laliga'
+    elif int_val == 2:
+        return 'Seria-A'
+    elif int_val == 3:
+        return 'Bundesliga'
+    elif int_val == 4:
+        return 'League 1'
     
     else:
         pass
