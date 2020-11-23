@@ -31,7 +31,7 @@
           <p style="font-size: x-small; float: right;" class="post-box--icon"><i class="fas fa-eye ">{{ post.counts | cool_num }}</i> <i class="fas fa-comment"> 43 </i></p>
           </div>
           <br>  
-          <div style="margin-left: 80%;" ><a class="btn btn-dark" href = {% url 'blog:post_detail' post.slug %} style="border-radius: 1px;"><strong> more</strong></a></div>
+          <div style="margin-left: 80%;" ><a class="btn btn-dark-round" href = {% url 'blog:post_detail' post.slug %} ><strong> more</strong></a></div>
         </div>
       </div>
       {% endfor %}
@@ -53,28 +53,39 @@
       </div>
     </div>
       <img src="{% static 'images/pitch2.jpg' %}" alt="medium" width="100%" height="180px">
-      <br><br>
       <div class="container-fluid" id="milk" style="margin-top: 25px;">
         <div class="row">
-          <div class=" col-lg-6 col-md-6">
-            <div align='center' class="about">
+          <div class=" col-lg-4 col-md-4">
+            <div align='center' class="site--info">
               <p style="font-style: oblique; font-family: Dutch801 XBd BT; font-size: large; font-weight: bolder; text-align: center;">About</p>
-              <div style="width:50% ; height:1px; position:relative; top: -6px; background-color: rgb(250, 250, 250);" ></div>
+              <div style="width:50% ; height:1px; position:relative; top: -6px; background-color: rgb(0, 0, 0);" ></div>
               <p>Welcome to speaking sports.<br> Here we give you confirmed updates on football, facts, rumours and intresting this in the world of football, Histories that you don't
               believed that happend trending updates. football rallies, football speculations and expectations.
               All we do is bring the glory of football to you.   </p> 
            </div>
           </div>
           <br>
-          <div class="col-lg-6 col-md-6">
-            <div align='center' class="about">
+          <div class="col-lg-4 col-md-4">
+            <div align='center' class="site--info">
               <p style="font-style: oblique; font-family: Dutch801 XBd BT; font-size: large; font-weight: bolder; text-align: center;">How to submit a post</p>
-              <div style="width:50% ; height:1px; position:relative; top: -6px; background-color: rgb(250, 250, 250);" ></div>
+              <div style="width:50% ; height:1px; position:relative; top: -6px; background-color: rgb(0, 0, 0);" ></div>
               <p> this is website is home to all football fans.
                   how to get your post to us, which should be authentic and most not contain any hate towards anyone or place
                   just click the contribute button below gee
               </p> 
-              <a class="btn btn-white" href="{% url 'blog:subscription' %}" style="margin-bottom: 10px;">contribute</a>
+              <a class="btn btn-dark-round" href="{% url 'blog:subscription' %}" style="margin-bottom: 10px;">contribute</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="site--info">
+              <div class="over--top" align ="center">
+               <img src="{% static 'images/newsletter.png' %}" alt="" height="80px" width="80px">
+             </div>
+             <div align = "center">
+             <p style="padding-top: 100px; font-size: small; padding-inline-start: 10px;" > <b style="color: chartreuse;">VIP SERVICES</b> click below to become a vip of 
+            speaking sports </p>
+            <a class="btn btn-dark-round" href="{% url 'blog:subscription' %}" style="margin-bottom: 10px;" >Activate VIP</a>
+             </div>
             </div>
           </div>
         </div>
