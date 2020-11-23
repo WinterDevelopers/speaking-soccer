@@ -22,13 +22,13 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'blog_post')
+    display_image = models.ImageField(upload_to = 'media/dynamic', default = 'images/head.png')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    display_image = models.ImageField(upload_to = 'media/dynamic', default = 'images/head.png')
     counts = models.IntegerField(default = 0)
     category = models.IntegerField(choices=TAG, default='EPL')
+    status = models.IntegerField(choices=STATUS, default=0)
 
 
     class Meta:

@@ -1,5 +1,6 @@
 {% load static %}
 {% load humanize %}
+
 <!DOCTYPE html> 
 
 <head>
@@ -10,185 +11,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
   <link rel="shortcut icon" href="{% static 'images/favicon.png'  type = 'image/icon' %}">
+  <link rel="stylesheet" href ="{% static 'css/speaking-soccer.css' %}">
   
 
     <style>
-        body{
-         background-color: rgb(250, 250, 250);
-         
-        }
-        
-        .nav-bg{
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 0, 0);
-        }
-
-        .nav-bar{
-          display: flex;
-          flex-direction: row;
-
-        }
-        .nav-text{
-          color: #000;
-          font-family: fantasy;
-          font-weight: 400;
-          padding-right: 10px;
-        }
-        .nav-shadow{
-          box-shadow: rgb(7, 7, 7) 2px 1px 3px ;
-        }
-        .post-box{
-          border-radius: 2px;
-          background-color: rgb(255, 255, 255);
-          box-shadow: rgb(7, 7, 7) 1px 2px 15px -3px ;
-          color: black;
-          padding: 10px;
-          padding-inline-start: 10px;
-          
-        }
-        .post-box--icon{
-          color: dimgray ;
-        }
-        .box-row{
-          display: flex;
-          align-items: flex-stretch;
-          margin-bottom: 5px;
-          padding-bottom: 4px;
-        
-        }
-        .justify-content-center{
-          justify-content: center;
-          margin-left: 20px;
-        }
-        .btn-dark{
-          background-color: black;
-          color: greenyellow;
-          border-radius: 2px;
-        }
-        .btn-dark-round{
-          background-color: black;
-          color: greenyellow;
-          border-radius: 10px;
-        }
-        
-        .btn-white{
-          background-color: white;
-          color: #000;
-        }
-        
-        .about{
-         border: solid 1px rgb(51, 46, 46);
-         background-color: rgb(51, 45, 45);
-         box-shadow: grey 1px 1px 8px 1px;
-         padding: 2px;
-         border-radius: 5px;
-         margin-bottom: 5px;
-         padding-inline-start: 2px;
-         color: ivory;
-
-        }
-        
-        .detail-box{
-          border-radius: 2px;
-          background-color: rgb(255, 255, 255);
-          box-shadow: rgb(7, 7, 7) 1px 2px 6px -3px ;
-          color: black;
-          padding: 10px;
-          padding-inline-start: 10px;
-          }
-
-        .detail-img-box{
-        border-radius: 2px;
-        background-color: rgb(255, 255, 255);
-        box-shadow: rgb(7, 7, 7) 1px 2px 6px 1px ;
-        color: black;
-        }
-
-        .latest{
-          max-height: 50px;
-          border: rgb(255, 255, 255) solid 1px;
-          display: flex;
-          overflow-x: auto;
-          background-color: rgb(255, 255, 255);
-          padding: 4px;
-        
-        }
-        .latest ::-webkit-scrollbar{
-          width: 0;
-        }
-        .latest .item{
-          min-width: 28%;
-          height: 30px;
-          text-align: center;
-          margin-right: 6px;
-          margin-bottom: 10px;
-          box-shadow: rgb(7, 7, 7) 2px 2px 3px;
-          font-family:Verdana, Geneva, Tahoma, sans-serif;
-        }
-         .current{
-          background-color: rgb(0, 0, 0);
-          color: white;
-          min-width: 28%;
-          height: 30px;
-          text-align: center;
-          margin-right: 6px;
-          margin-bottom: 10px;
-          box-shadow: rgb(7, 7, 7) 2px 2px 3px;
-          font-family:Verdana, Geneva, Tahoma, sans-serif;
-        }
-        .breadcrumbs{
-          padding: 10px;
-          font-family: sans-serif;
-
-        }
-        .breadcrumbs--item{
-          display: inline-block;
-        }
-        .breadcrumbs--item:not(:last-of-type)::after{
-          content: '//';
-          margin: 0px, 5px;
-          color: rgb(220, 221, 221);
-        }
-        .breadcrumbs--link{
-          text-decoration: none;
-          color: #999999;
-        }
-        .breadcrumbs--link:hover{
-          color: greenyellow;
-          text-decoration: underline;
-        }
-        .breadcrumbs--link--active{
-          color: rgb(5, 5, 5);
-          font-weight: 500;
-        }
-
-        .footer{
-          background-color: black;
-          color: greenyellow;
-          padding-inline-start: 20px;
-          font-family:fantasy;
-          padding-top: 10px;
-          margin-top: 15px;
-          display: block;
-        }
-       
-        .site--info{
-          background-color: rgb(255, 255, 255);
-          box-shadow: black 2px 2px 10px -3px;
-          border-radius: 5px;
-          padding-inline-start: 20px;
-          padding-inline-end: 20px;
-          padding: 5px;
-          height: 250px;
-          margin-top: 30px;
-          
-        }
-       
-        .over--top{
-          position: absolute;
-          top: -1px;
-          margin-left: 35%;
-        }
+      
     </style>
 </head>
 <body>
@@ -199,15 +26,17 @@
             <i class="fas fa-bars"></i>
         </a>
         <div class="collapse navbar-collapse" id="navbardropdown">
+          <hr>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link; nav-text" href="#milk">About </a>
+                <a class="nav-link; nav-text"  href="#about">About </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link; nav-text" href="#">Contact </a>
+                <a class="nav-link; nav-text"  href="#contact">Contact </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link; nav-text" href="#">Privacy Policy </a>
+                <a class="nav-link; nav-text"  href="#privacypolicy">Privacy Policy </a>
+               
               </li>    
             </ul>
           </div>  
@@ -235,7 +64,7 @@
     <div class="p-2"><i class="fab fa-instagram"></i></div>
     <div class="p-2"><i class="fab fa-twitter"></i></div>
     </div>
-    <div style="display: flex; justify-content: center; color: rgb(161, 161, 161); font-size: x-small;"><i class="far fa-copyright"> Winterdevelopers 2020</i>
+    <div style="display: flex; justify-content: center; padding-bottom: 5px; color: rgb(161, 161, 161); font-size: x-small;"><i class="far fa-copyright"> Winterdevelopers 2020</i>
     
     </div>
 

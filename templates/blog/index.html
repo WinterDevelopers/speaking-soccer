@@ -28,7 +28,7 @@
           <hr>
           <div class="container">
           <p style=" font-size: small; float: left;;"> {{ post.created_on | naturalday}} by {{ post.author }}</p>
-          <p style="font-size: x-small; float: right;" class="post-box--icon"><i class="fas fa-eye ">{{ post.counts | cool_num }}</i> <i class="fas fa-comment"> 43 </i></p>
+          <p style="font-size: x-small; float: right;" class="post-box--icon"><i class="fas fa-eye ">{{ post.counts | cool_num }}</i> <i class="fas fa-comment"> {{ post.comments.count }}</i></p>
           </div>
           <br>  
           <div style="margin-left: 80%;" ><a class="btn btn-dark-round" href = {% url 'blog:post_detail' post.slug %} ><strong> more</strong></a></div>
