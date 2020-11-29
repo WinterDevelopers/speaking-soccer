@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.views import generic
 from django.urls import reverse
-
 from blog.models import Post, Comment
 from blog.forms import CommentForm
 from blog.subscription import SubscribersForm
@@ -11,7 +10,7 @@ from blog.subscription import SubscribersForm
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status = 1).order_by('-created_on')
     template_name = 'blog/index.html'
-    paginate_by = 3
+    paginate_by = 8
     context_object_name = 'post_list'
  
 
