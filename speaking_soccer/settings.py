@@ -30,7 +30,7 @@ SECRET_KEY = '3p)^ki0b9g1fh^(xe1r5766m#ft$20qofsq#g@ls-n6@js22-2'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -50,11 +50,11 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'crispy_forms',
    
-    #'django.contrib.sites',
+   
     
 ]
  
-SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
