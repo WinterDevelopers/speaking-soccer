@@ -54,6 +54,7 @@ class PostDetail(generic.DetailView):
 def post_detail(request, slug):
     template_name = 'blog/detail.html'
     post = get_object_or_404(Post, slug=slug)
+    others = Post.objects.filter(category = 0).order_by('-created_on')
     comments = post.comments.filter(active=True)
     new_comment = None
     post.counts = post.counts + 1
@@ -74,7 +75,7 @@ def post_detail(request, slug):
     else:
         comment_form = CommentForm()
         
-    return render(request, template_name, {'post': post,
+    return render(request, template_name, {'post': post, 'others':others,
                                                 'comments': comments, 
                                                 'new_comment': new_comment,
                                                 'comment_form':comment_form })
