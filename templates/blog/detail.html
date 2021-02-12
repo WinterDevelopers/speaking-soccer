@@ -86,7 +86,7 @@
       <p style="font-size: smaller;">{{other.title}}</p>
       <p style="font-size: xx-small;">{{other.created_on}}</p>
       </span>
-      <span><div style="float: right;" ><img src="{% static 'images/pitch.jpg' %}" alt="" style="position: relative;height: 115px; width: 250px; border-radius: 3px;"></div>
+      <span><div style="float: right;" ><img src="{{ other.display_image.url }}" alt="post image" style="position: relative;height: 115px; width: 250px; border-radius: 3px;"></div>
       </span>
   </div>
   </div>

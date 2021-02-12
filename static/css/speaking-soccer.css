@@ -133,7 +133,7 @@ body{
    .nav-bar-list{
      margin: 3px;
      padding: 5px;
-     font-family: Didot;
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    }
    .nav-bar-list:hover{
      color: chartreuse;
