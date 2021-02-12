@@ -81,6 +81,7 @@
 <div class="row">
   {% for other in others %}
   <div class="col-lg-4 mb-2" style="margin: 5px;">
+    <a href={% url 'blog:post_detail' other.slug %}>
     <div class="detail-box-others" style="display: flex;">
       <span>
       <p style="font-size: smaller;">{{other.title}}</p>
@@ -89,6 +90,7 @@
       <span><div style="float: right;" ><img src="{{ other.display_image.url }}" alt="post image" style="position: relative;height: 115px; width: 250px; border-radius: 3px;"></div>
       </span>
   </div>
+  </a>
   </div>
   {% endfor %}
 </div>
