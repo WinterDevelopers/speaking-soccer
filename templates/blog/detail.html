@@ -34,11 +34,13 @@
             <hr>
         </div>
           </div>
+          <div class="col-md-8  mb-4  mt-3 ">
+            <div class="detail-box">
+              <h2 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ comments.count }} Comments</h2>
+            </div>
+          </div>
         <div class="col-md-8  mb-4  mt-3 ">
           <div class="detail-box">
-           
-            <h2>{{ comments.count }} comments</h2>
-    
             {% for comment in comments %}
             <div class="comments" style="padding: 10px;">
               <p class="font-weight-bold">
@@ -71,8 +73,24 @@
             {% endif %}
           </div>
         </div>
+        <p style="border-radius: 10px 10px 10px 10px; background-color: black; color: chartreuse; padding-left: 5px;">Tags: {{post.tag.all|join:","}}</p>
       </div>
-      </div>
+      
+    </div>
+</div>
+<div class="row">
+  {% for other in others %}
+  <div class="col-lg-4 mb-2" style="margin: 5px;">
+    <div class="detail-box-others" style="display: flex;">
+      <span>
+      <p style="font-size: smaller;">{{other.title}}</p>
+      <p style="font-size: xx-small;">{{other.created_on}}</p>
+      </span>
+      <span><div style="float: right;" ><img src="{% static 'images/pitch.jpg' %}" alt="" style="position: relative;height: 115px; width: 250px; border-radius: 3px;"></div>
+      </span>
+  </div>
+  </div>
+  {% endfor %}
 </div>
 </div>
 {% endblock %}

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'blog',
     'django_summernote',
     'django.contrib.sitemaps',
+    'taggit',
     'crispy_forms',
    
     #'django.contrib.sites',

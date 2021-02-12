@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.models import User
 
+from taggit.managers import TaggableManager
+
 
 
 
@@ -27,8 +29,9 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     counts = models.IntegerField(default = 0)
-    category = models.IntegerField(choices=TAG, default='EPL')
+    category = models.IntegerField(choices=TAG, default= 0)
     status = models.IntegerField(choices=STATUS, default=0)
+    tag = TaggableManager()
 
 
     class Meta:

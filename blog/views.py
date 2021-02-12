@@ -54,11 +54,12 @@ class PostDetail(generic.DetailView):
 def post_detail(request, slug):
     template_name = 'blog/detail.html'
     post = get_object_or_404(Post, slug=slug)
-    others = Post.objects.filter(category = 0).order_by('-created_on')
+    others = Post.objects.filter(category=post.category).order_by('-created_on')[:4]
     comments = post.comments.filter(active=True)
     new_comment = None
     post.counts = post.counts + 1
     post.save()
+    
   
 
 
