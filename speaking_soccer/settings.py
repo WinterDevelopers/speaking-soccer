@@ -96,30 +96,16 @@ WSGI_APPLICATION = 'speaking_soccer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if os.getenv("DATABASE_URL", "") != "":
-    r = urlparse(os.environ.get("DATABASE_URL"))
-    DATABASE = {
-        "default":{
-            "ENGINE":"django.db.backend.postgresql_psycopg2",
-            "NAME": os.path.relpath(r.path, "/"),
-            "USER": r.username,
-            "PASSWORD": r.password,
-            "HOST":r.hostname,
-            "PORT":r.port,
-            "OPTIONS":{"sslmode": "required"}, 
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd66sqp356jfckm',
+        'HOST': 'ec2-23-20-168-40.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'fgtgvsbvsnmfsa',
+        'PASSWORD': 'fe93b3f8fc46b2fe6aaa6e22cc0aaacf8c3c7df42b9f100ad3a59d571be19ab2',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'd66sqp356jfckm',
-            'HOST': 'ec2-23-20-168-40.compute-1.amazonaws.com',
-            'PORT': 5432,
-            'USER': 'fgtgvsbvsnmfsa',
-            'PASSWORD': 'fe93b3f8fc46b2fe6aaa6e22cc0aaacf8c3c7df42b9f100ad3a59d571be19ab2',
-        }
-    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
