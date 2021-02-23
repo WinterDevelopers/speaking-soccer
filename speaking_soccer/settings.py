@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+from django.core.management.utils import get_random_secret_key
+
+import os
 
 from pathlib import Path
+from urllib.parse import urlparse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,14 +29,14 @@ MEDIA_ROOT = BASE_DIR/'media'
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3p)^ki0b9g1fh^(xe1r5766m#ft$20qofsq#g@ls-n6@js22-2'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG","True") == "False"
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
@@ -92,16 +96,30 @@ WSGI_APPLICATION = 'speaking_soccer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd66sqp356jfckm',
-        'HOST': 'ec2-23-20-168-40.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'fgtgvsbvsnmfsa',
-        'PASSWORD': 'fe93b3f8fc46b2fe6aaa6e22cc0aaacf8c3c7df42b9f100ad3a59d571be19ab2',
+if os.getenv("DATABASE_URL", "") != "":
+    r = urlparse(os.environ.get("DATABASE_URL"))
+    DATABASE = {
+        "default":{
+            "ENGINE":"django.db.backend.postgresql_psycopg2",
+            "NAME": os.path.relpath(r.path, "/"),
+            "USER": r.username,
+            "PASSWORD": r.password,
+            "HOST":r.hostname,
+            "PORT":r.port,
+            "OPTIONS":{"sslmode": "required"}, 
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'd66sqp356jfckm',
+            'HOST': 'ec2-23-20-168-40.compute-1.amazonaws.com',
+            'PORT': 5432,
+            'USER': 'fgtgvsbvsnmfsa',
+            'PASSWORD': 'fe93b3f8fc46b2fe6aaa6e22cc0aaacf8c3c7df42b9f100ad3a59d571be19ab2',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
